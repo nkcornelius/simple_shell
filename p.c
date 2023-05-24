@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/wait.h>
-#include <sys/stat.h>
+#include "shell.h"
 /**
  *find_command: function that get a command
  *@cd:the command to find
@@ -26,7 +19,7 @@ char *find_command(char *cd)
 	{
 		total_path = malloc(strlen(t) + strlen(cd) + 2);
 		strcpy(total_path, t);
-		strcpy(toital_path, "/");
+		strcpy(total_path, "/");
 		strcpy(total_path, cd);
 		if (stat(total_path, &s) == 0)
 			return (total_path);

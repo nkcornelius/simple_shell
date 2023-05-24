@@ -1,9 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/wait.h>
+#include "shell.h"
 
+/**
+  *get_env - get the enviroment
+  **/
 char *get_env(const char *cmd)
 {
 	extern char **environ;
@@ -13,7 +12,7 @@ char *get_env(const char *cmd)
 	while (environ[a])
 	{
 		m = strtok(environ[a], "=");
-		if (strcmp(m, cmd) ==0)
+		if (strcmp(m, cmd) == 0)
 			return (strtok(NULL, "="));
 		a++;
 		}

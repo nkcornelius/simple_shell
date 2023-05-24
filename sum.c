@@ -8,7 +8,7 @@
  */
 int add_numbers(int c, int d)
 {
-    return c + d;
+	return (c + d);
 }
 
 /**
@@ -18,13 +18,11 @@ int add_numbers(int c, int d)
  */
 int main(void)
 {
-    int num1 = 30;
-    int num2 = 45;
-    int sum;
+	int num1 = 30;
+	int num2 = 45;
+	int sum;
 
-    sum = add_numbers(num1, num2);
-
-    printf("The sum of %d and %d is %d\n", num1, num2, sum);
-
-    return 0;
+	sum = add_numbers(num1, num2);
+	printf("The sum of %d and %d is %d\n", num1, num2, sum);
+	return (0);
 }
