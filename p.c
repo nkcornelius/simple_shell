@@ -1,4 +1,5 @@
-#include <stdio.h>
+i#include <stdio.h>
+#include <stdlib.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -80,16 +81,15 @@ void execute_cd(char *args[])
 	{
 		waitpid(child_pid, &status, 0);
 	}
+}
 /*main:the main to use func*/
-int main(int a, char **v, char **e)
+int main(void)
 {
 	char *in = NULL;
 	size_t in_size = 0;
-	char *cd;
-	char **args;
-	int status, nb;
+	char *args[];
+	int nb;
 	int i;
-	pid_t pid;
 
 	while (1)
 	{
