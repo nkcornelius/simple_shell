@@ -75,29 +75,3 @@ void execute_cd(char *args[])
 		waitpid(child_pid, &status, 0);
 	}
 }
-/*main:the main to use func*/
-int main(void)
-{
-	char *in = NULL;
-	size_t in_size = 0;
-	char *args[];
-	int nb;
-
-	while (1)
-	{
-		write(1, "$", 2);
-		nb = getline(&in, &in_size, stdin);
-		if (nb == -1)
-		{
-			perror("ERROR");
-			break;
-		}
-		in[strlen(in) - 1] = '\0';
-		splt(in, "\t\n");
-		if(args[0] != NULL)
-			execute_cd(args);
-		else
-		exit(0);
-	}
-	return (0);
-}

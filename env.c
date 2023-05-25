@@ -2,10 +2,11 @@
 
 /**
   *get_env - get the enviroment
+  *@cmd: command to get
+  *Return: enviromant or null
   **/
 char *get_env(const char *cmd)
 {
-	extern char **environ;
 	int a;
 	char *m;
 
@@ -18,7 +19,7 @@ char *get_env(const char *cmd)
 		}
 	return (NULL);
 }
-
+/**main - the main to the function**/
 int main(void)
 {
 	printf("%s/n", get_env("pwd"));

@@ -5,7 +5,6 @@
 
 int main(void)
 {
-	char *command;
 	char buffer[BUFFER_SIZE];
 	ssize_t read_bytes;
 	pid_t child_pid;
