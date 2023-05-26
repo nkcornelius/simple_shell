@@ -1,9 +1,15 @@
-#include "shell.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+
 /**
- *find_command: function that get a command
+ *find_command -  function that get a command
  *@cd:the command to find
  *
- *@Return:full path of cd or NULL
+ *Return:full path of cd or NULL
  **/
 
 char *find_command(char *cd)
@@ -15,7 +21,7 @@ char *find_command(char *cd)
 
 	t = strtok(path, ":");
 
-	while (t != NULL)
+	while (t)
 	{
 		total_path = malloc(strlen(t) + strlen(cd) + 2);
 		strcpy(total_path, t);
@@ -29,8 +35,9 @@ char *find_command(char *cd)
 	return (NULL);
 }
 /**
-  *splt: split a string
-  *
+  *splt -  split a string
+  *@in: the input
+  *@d: del
   *Return:tokens
   **/
 char **splt(char *in, char *d)
@@ -50,7 +57,7 @@ char **splt(char *in, char *d)
 	ts[j] = NULL;
 	return (ts);
 }
-/*execute_cd:a funcion executing a command*/
+/*execute_cd - a funcion executing a command*/
 
 void execute_cd(char *args[])
 {
