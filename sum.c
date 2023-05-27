@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "shell.h"
 /**
  * add_numbers - Adds two numbers.
  * @c: The first number.
