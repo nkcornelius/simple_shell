@@ -1,9 +1,11 @@
 #include "shell.h"
 
-
 #define BUFFER_SIZE 1024
+/**
+  *main_b - the main function to buffer
+  **/
 
-int main(void)
+int main_b(void)
 {
 	char buffer[BUFFER_SIZE];
 	ssize_t read_bytes;
@@ -12,20 +14,16 @@ int main(void)
 
 	while (1)
 	{
-		/**Display the prompt**/
-		printf("$ ");
+		printf("$");
 		read_bytes = read(STDIN_FILENO, buffer, BUFFER_SIZE);
 		if (read_bytes == -1)
 		{
-			perror("read");
 			exit(EXIT_FAILURE);
 		}
 		if (read_bytes == 0)
 		{
-			printf("\n");
 			break;
 		}
-		/** Remove the newline character**/
 		buffer[read_bytes - 1] = '\0';
 		child_pid = fork();
 		if (child_pid == -1)
@@ -35,14 +33,11 @@ int main(void)
 		}
 		if (child_pid == 0)
 		{
-			/** Child process**/
 			execlp(buffer, buffer, NULL);
-			perror("execlp");
 			exit(EXIT_FAILURE);
 		}
 		else
 		{
-			/**Parent process**/
 			waitpid(child_pid, &status, 0);
 		}
 	}

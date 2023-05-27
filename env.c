@@ -19,9 +19,3 @@ char *get_env(const char *cmd)
 		}
 	return (NULL);
 }
-/**main - the main to the function**/
-int main(void)
-{
-	printf("%s/n", get_env("pwd"));
-	return (0);
-}
