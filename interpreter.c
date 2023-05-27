@@ -3,6 +3,7 @@
 #define BUFFER_SIZE 1024
 /**
   *main_b - the main function to buffer
+  *Return: void
   **/
 
 int main_b(void)

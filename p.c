@@ -57,7 +57,10 @@ char **splt(char *in, char *d)
 	ts[j] = NULL;
 	return (ts);
 }
-/*execute_cd - a funcion executing a command*/
+/**
+  *execute_cd - a funcion executing a command
+  *@args: charachters to ececute
+ **/
 
 void execute_cd(char *args[])
 {
