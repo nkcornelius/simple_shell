@@ -1,10 +1,8 @@
 #include "shell.h"
 /**
- * exit_b - Exit Statue Shell
+ * exit_bul - Exit Statue Shell
  * @cd:Command
  * @in: input that user put
- * @argv:Program Name
- * @c: count
  * Return: exit
  */
 void  exit_bul(char **cd, char *in)
